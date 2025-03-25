@@ -3,3 +3,7 @@ uvicorn
 openai
 pydantic
 transformers
+tensorflow
+google-generativeai
+faiss-cpu
+sentence-transformers

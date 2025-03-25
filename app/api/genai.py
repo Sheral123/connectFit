@@ -21,11 +21,12 @@ async def chat_endpoint(request: ChatRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 # -------------------------------
 # Personalized Plan Generation (RAG) Endpoint
 # -------------------------------
 class PlanRequest(BaseModel):
-    preferences: dict  # e.g., {"goal": "weight loss", "diet": "balanced", "activity": "cardio"}
+    preferences: str  # e.g., {"goal": "weight loss", "diet": "balanced", "activity": "cardio"}
 
 class PlanResponse(BaseModel):
     plan: str
@@ -37,6 +38,7 @@ async def generate_plan_endpoint(request: PlanRequest):
         return PlanResponse(plan=plan_text)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 # -------------------------------
 # Nutrition Advice Endpoint

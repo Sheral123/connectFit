@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.api import genai
 
-app = FastAPI(title="ConnectFit GenAI API")
+app = FastAPI(title="ConnectFit GenAI API with LangChain & Vector DB")
 
 # Mount the GenAI endpoints under /api/genai
 app.include_router(genai.router, prefix="/api/genai")
